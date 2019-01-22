@@ -21,12 +21,11 @@
 #
 ##############################################################################
 
-from openerp import api
-from openerp.osv import osv
 from openerp import SUPERUSER_ID
+from openerp import api
 
 
-class view(osv.osv):
+class view(models.Model):
     _inherit = "ir.ui.view"
 
     @api.cr_uid_ids_context
