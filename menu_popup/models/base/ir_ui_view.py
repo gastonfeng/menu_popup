@@ -29,7 +29,7 @@ class view(models.Model):
     _inherit = "ir.ui.view"
 
     @api.cr_uid_ids_context
-    def render(self, cr, uid, id_or_xml_id, values=None, engine='ir.qweb', context=None):
+    def render(self,  id_or_xml_id, values=None, engine='ir.qweb', context=None):
         if context is None:
             context = {}
         if not values:
@@ -40,4 +40,4 @@ class view(models.Model):
         if menu_popup_ids:
             menu_popup = self.pool['menu.popup'].browse(cr, SUPERUSER_ID, menu_popup_ids[0])
             values.update({'menu_popup': menu_popup})
-        return super(view, self).render(cr, uid, id_or_xml_id, values=values, engine=engine, context=context)
+        return super(view, self).render( id_or_xml_id, values=values, engine=engine, context=context)

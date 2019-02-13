@@ -41,15 +41,15 @@ class MenuPopup(http.Controller):
         menu_popup_line = request.registry['menu.popup.line']
         list_item = False
 
-        menu_popup_id = menu_popup.search(cr, uid, [('active', '=', True)])
+        menu_popup_id = menu_popup.search( [('active', '=', True)])
         if menu_popup_id and len(menu_popup_id) > 0 and menu_popup_id[0]:
-            base_url = request.registry['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
+            base_url = request.registry['ir.config_parameter'].get_param( 'web.base.url')
             menu_popup_id = menu_popup_id[0]
-            menu_popup_line_ids = menu_popup_line.search(cr, uid, [('menu_popup_id', '=', menu_popup_id)])
+            menu_popup_line_ids = menu_popup_line.search( [('menu_popup_id', '=', menu_popup_id)])
 
             if menu_popup_line_ids:
                 list_item = []
-                for line in menu_popup_line.browse(cr, uid, menu_popup_line_ids):
+                for line in menu_popup_line.browse( menu_popup_line_ids):
                     item = {
                         'desc': line.description or ''
                     }
