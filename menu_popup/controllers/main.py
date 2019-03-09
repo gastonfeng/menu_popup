@@ -21,14 +21,10 @@
 #
 ##############################################################################
 
-import json
-from urlparse import urljoin
-
-import werkzeug.utils
-
+from openerp import SUPERUSER_ID
 from openerp import http
 from openerp.addons.web.http import request
-from openerp import SUPERUSER_ID
+from urlparse import urljoin
 
 
 class MenuPopup(http.Controller):

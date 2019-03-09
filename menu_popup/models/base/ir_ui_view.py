@@ -21,9 +21,9 @@
 #
 ##############################################################################
 
+from openerp import SUPERUSER_ID
 from openerp import api
 from openerp.osv import osv
-from openerp import SUPERUSER_ID
 
 
 class view(osv.osv):
